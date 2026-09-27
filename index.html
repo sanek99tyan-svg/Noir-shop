@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOIR / FORM — Concept Fashion Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="loader" class="loader">
+  <div class="loader-mark">N/F</div>
+  <div class="loader-line"><i></i></div>
+  <small>LOADING COLLECTION</small>
+</div>
+
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<header class="site-header">
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span></button>
+  <a class="brand" href="#" data-route="home">NOIR / FORM</a>
+  <nav class="desktop-nav">
+    <a href="#" data-route="shop">Shop</a>
+    <a href="#editorial">Editorial</a>
+    <a href="#about">About</a>
+  </nav>
+  <div class="header-actions">
+    <button class="text-action" id="searchBtn">Search</button>
+    <button class="icon-action" id="wishlistBtn">♡ <b id="wishCount">0</b></button>
+    <button class="icon-action" id="cartBtn">Bag <b id="cartCount">0</b></button>
+  </div>
+</header>
+
+<aside class="side-menu" id="sideMenu">
+  <div class="menu-top"><strong>NOIR / FORM</strong><button id="menuClose">×</button></div>
+  <div class="menu-links">
+    <button data-route="home">01 / Home</button>
+    <button data-route="shop">02 / Shop All</button>
+    <button data-filter-route="Jackets">03 / Jackets</button>
+    <button data-filter-route="Tops">04 / Tops</button>
+    <button data-filter-route="Bottoms">05 / Bottoms</button>
+  </div>
+  <div class="menu-foot">Independent digital fashion concept.<br>Seoul / 2026</div>
+</aside>
+
+<div class="veil" id="veil"></div>
+
+<main id="app">
+<section class="view active" data-view="home">
+  <section class="hero" id="hero">
+    <div class="hero-meta">
+      <span>DROP 06 / 2026</span>
+      <span>SEOUL — DIGITAL EDITION</span>
+    </div>
+    <div class="hero-copy">
+      <p>Outerwear system / No. 01</p>
+      <h1>STAND OUT<br>WITHOUT TRYING</h1>
+      <div class="hero-desc">Soft volume. Sharp attitude. Built for weather, styled for everything else.</div>
+      <button class="cta-pill" data-route="shop">Explore collection <span>↗</span></button>
+    </div>
+    <div class="hero-stage">
+      <div class="stage-halo"></div>
+      <img id="heroProduct" src="assets/puffer-black.svg" alt="Puffer jacket">
+      <div class="shadow"></div>
+    </div>
+    <div class="hero-price">
+      <span>$149</span><del>$199</del>
+      <small>Choose your tone</small>
+      <div class="tone-switcher">
+        <button class="tone active" data-src="assets/puffer-black.svg" data-bg="black" aria-label="Black"></button>
+        <button class="tone orange" data-src="assets/puffer-orange.svg" data-bg="orange" aria-label="Orange"></button>
+        <button class="tone silver" data-src="assets/puffer-silver.svg" data-bg="silver" aria-label="Silver"></button>
+      </div>
+    </div>
+    <div class="hero-index"><span>01</span><i></i><span>04</span></div>
+  </section>
+
+  <section class="ticker"><div>NEW SHAPES — SOFT VOLUME — URBAN LAYERS — NOIR / FORM — NEW SHAPES — SOFT VOLUME — URBAN LAYERS — NOIR / FORM —</div></section>
+
+  <section class="featured-section">
+    <div class="section-head">
+      <div><p>Selected / 2026</p><h2>New arrivals</h2></div>
+      <button data-route="shop">View all ↗</button>
+    </div>
+    <div class="featured-grid" id="featuredGrid"></div>
+  </section>
+
+  <section class="editorial" id="editorial">
+    <div class="editorial-card light">
+      <div>
+        <span>EDITORIAL 01</span>
+        <h3>Volume<br>as identity.</h3>
+      </div>
+      <div class="floating-garment"><img src="assets/hoodie-cream.svg" alt=""></div>
+      <button data-route="shop">See the edit</button>
+    </div>
+    <div class="editorial-card dark">
+      <span>ESSENTIALS</span>
+      <h3>LESS NOISE.<br>MORE FORM.</h3>
+      <p>Everyday layers with a deliberate silhouette.</p>
+      <img src="assets/tee-white.svg" alt="">
+    </div>
+  </section>
+
+  <section class="manifesto" id="about">
+    <p>NOIR / FORM is a fictional fashion concept made as a fully interactive front‑end demo.</p>
+    <h2>Designed to feel like a campaign.<br>Built to behave like a store.</h2>
+  </section>
+</section>
+
+<section class="view" data-view="shop">
+  <div class="shop-hero">
+    <div><p>Collection / 2026</p><h1>ALL PIECES</h1></div>
+    <p class="shop-intro">Eight demo products, real filters, sizes, wishlist, cart and local checkout flow — no database required.</p>
+  </div>
+  <div class="shop-toolbar">
+    <div class="filter-row" id="filterRow">
+      <button class="active" data-filter="All">All</button>
+      <button data-filter="Jackets">Jackets</button>
+      <button data-filter="Tops">Tops</button>
+      <button data-filter="Bottoms">Bottoms</button>
+    </div>
+    <select id="sortSelect" aria-label="Sort">
+      <option value="featured">Featured</option>
+      <option value="low">Price: low to high</option>
+      <option value="high">Price: high to low</option>
+    </select>
+  </div>
+  <div class="shop-grid" id="shopGrid"></div>
+</section>
+
+<section class="view product-view" data-view="product">
+  <button class="back-link" data-route="shop">← Back to collection</button>
+  <div class="product-layout">
+    <div class="product-gallery">
+      <div class="main-product-visual"><img id="detailImg" alt=""></div>
+      <div class="detail-strip"><span>01</span><i></i><span>DETAILS</span></div>
+    </div>
+    <div class="product-info">
+      <p id="detailCategory">Category</p>
+      <h1 id="detailName"></h1>
+      <div class="detail-price" id="detailPrice"></div>
+      <p id="detailDesc"></p>
+      <div class="option-label"><span>Size</span><button id="sizeGuide">Size guide</button></div>
+      <div class="sizes" id="sizes"></div>
+      <div class="product-actions">
+        <button class="primary" id="detailAdd">Add to bag</button>
+        <button class="wish-large" id="detailWish">♡</button>
+      </div>
+      <div class="accordion">
+        <button>Details <span>＋</span></button><div><p>Premium-feel concept garment. Static demo data only.</p></div>
+        <button>Delivery & returns <span>＋</span></button><div><p>Demo shipping: 2–4 days. Returns within 14 days.</p></div>
+        <button>Materials <span>＋</span></button><div><p>Sample composition shown for portfolio presentation.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<aside class="drawer cart-drawer" id="cartDrawer">
+  <div class="drawer-head"><div><p>Your edit</p><h2>Shopping bag</h2></div><button data-close>×</button></div>
+  <div class="drawer-body" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div><span>Subtotal</span><strong id="cartTotal">$0</strong></div>
+    <button class="primary wide" id="checkoutBtn">Checkout <span>→</span></button>
+  </div>
+</aside>
+
+<aside class="drawer wish-drawer" id="wishDrawer">
+  <div class="drawer-head"><div><p>Saved</p><h2>Wishlist</h2></div><button data-close>×</button></div>
+  <div class="drawer-body" id="wishItems"></div>
+</aside>
+
+<section class="search-overlay" id="searchOverlay">
+  <div class="search-top"><span>SEARCH / STORE</span><button id="searchClose">×</button></div>
+  <input id="searchInput" placeholder="Type a product name..." autocomplete="off">
+  <div class="search-results" id="searchResults"></div>
+</section>
+
+<section class="checkout" id="checkout">
+  <button class="checkout-close" id="checkoutClose">×</button>
+  <div class="checkout-left">
+    <p>NOIR / FORM</p>
+    <h2>Complete<br>your order.</h2>
+    <div id="checkoutSummary"></div>
+  </div>
+  <form class="checkout-form" id="checkoutForm">
+    <h3>Contact</h3>
+    <div class="field-row"><input required placeholder="First name"><input required placeholder="Last name"></div>
+    <input required type="email" placeholder="Email">
+    <h3>Delivery</h3>
+    <input required placeholder="Address">
+    <div class="field-row"><input required placeholder="City"><input required placeholder="ZIP / Postal"></div>
+    <h3>Payment</h3>
+    <input required placeholder="Card number" inputmode="numeric" maxlength="19">
+    <div class="field-row"><input required placeholder="MM / YY"><input required placeholder="CVC" maxlength="4"></div>
+    <button class="primary wide" type="submit">Place demo order</button>
+    <small>No real payment is processed. Portfolio demo only.</small>
+  </form>
+</section>
+
+<div class="toast" id="toast"></div>
+<div class="transition-panel" id="transitionPanel"><span>NOIR / FORM</span></div>
+<script src="script.js"></script>
+</body>
+</html>
